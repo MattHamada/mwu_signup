@@ -11,4 +11,9 @@ class Equipment::AppointmentController < ApplicationController
       render json: { success: false}
     end
   end
+
+  def next_id
+    render json: { next_id: Appointment.next_id }
+  end
+
 end

@@ -11,11 +11,35 @@
         defaultDate: '<%= Date.today.strftime("%F") %>',
         selectable: true,
         selectHelper: true,
+        eventClick: function(calEvent, jsEvent, view) {
+
+          alert('Event: ' + calEvent.title);
+          alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+          alert('View: ' + view.name);
+
+          // change the border color just for fun
+          $(this).css('border-color', 'red');
+
+        },
         select: function(start, end) {
           var title = prompt('Name and phone extension:');
           var eventData;
+          var event_id;
+          $.ajax({
+              type: 'GET',
+              datatype: 'json',
+              url: window.location.pathname + '/appointment/next_id',
+              success: function(data) {
+                event_id = data.next_id;
+              },
+              error: function() {
+                alert('error getting id');
+                event_id = -1;
+              }
+          });
           if (title) {
             eventData = {
+              id: event_id,
               title: title,
               start: start,
               end: end
@@ -41,6 +65,7 @@
         editable: true,
           events: [<% @events.each do |e| %>
             {
+              id:    '<%= e[:id] %>',
               title: '<%= e[:title] %>',
               start: '<%= e[:start] %>',
               end: '<%= e[:stop] %>'

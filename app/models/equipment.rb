@@ -5,7 +5,8 @@ class Equipment < ActiveRecord::Base
     appointments = self.appointments
     app_arr = []
     appointments.each do |a|
-      temp = {title: a.name.to_s,
+      temp = {id:    a.id,
+              title: a.name.to_s,
               start: a.date_time_start.strftime("%FT%R"),
               stop:  a.date_time_end.strftime("%FT%R") }
       app_arr << temp

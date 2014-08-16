@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resources :equipment
 
+  get 'equipment/:equipment_id/appointment/next_id' => 'equipment/appointment#next_id', as: :appointment_next_id
+
   resources :equipment do
-    resources :appointment, controller: 'equipment/appointment', only: [:new, :create, :edit, :destroy]
+    resources :appointment, controller: 'equipment/appointment', only: [:new, :create, :edit, :destroy, :next_id]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
