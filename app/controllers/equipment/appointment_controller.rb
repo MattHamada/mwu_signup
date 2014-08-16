@@ -16,4 +16,13 @@ class Equipment::AppointmentController < ApplicationController
     render json: { next_id: Appointment.next_id }
   end
 
+  def destroy
+    @appointment = Appointment.find(params[:id])
+    if @appointment.destroy
+      render json: {success: 'true'}
+    else
+      render json: {success: 'false'}
+    end
+  end
+
 end

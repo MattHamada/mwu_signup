@@ -13,13 +13,21 @@
         selectHelper: true,
         eventClick: function(calEvent, jsEvent, view) {
 
-          alert('Event: ' + calEvent.title);
-          alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-          alert('View: ' + view.name);
-
-          // change the border color just for fun
-          $(this).css('border-color', 'red');
-
+          if (confirm("Delete Event?"))
+          {
+            $.ajax({
+              type: 'POST',
+              url: window.location.pathname + '/appointment/' + calEvent.id,
+              datatype: "json",
+              data: {"_method":"delete"},
+              error: function() {
+                alert('error deleting');
+              },
+              complete: function() {
+                location.reload();
+              }
+            });
+          }
         },
         select: function(start, end) {
           var title = prompt('Name and phone extension:');
