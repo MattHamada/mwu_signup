@@ -1,0 +1,21 @@
+                    Prefix Verb   URI Pattern                                              Controller#Action
+           equipment_index GET    /equipment(.:format)                                     equipment#index
+                           POST   /equipment(.:format)                                     equipment#create
+             new_equipment GET    /equipment/new(.:format)                                 equipment#new
+            edit_equipment GET    /equipment/:id/edit(.:format)                            equipment#edit
+                 equipment GET    /equipment/:id(.:format)                                 equipment#show
+                           PATCH  /equipment/:id(.:format)                                 equipment#update
+                           PUT    /equipment/:id(.:format)                                 equipment#update
+                           DELETE /equipment/:id(.:format)                                 equipment#destroy
+    equipment_appointments POST   /equipment/:equipment_id/appointments(.:format)          appointments#create
+ new_equipment_appointment GET    /equipment/:equipment_id/appointments/new(.:format)      appointments#new
+edit_equipment_appointment GET    /equipment/:equipment_id/appointments/:id/edit(.:format) appointments#edit
+     equipment_appointment DELETE /equipment/:equipment_id/appointments/:id(.:format)      appointments#destroy
+                           GET    /equipment(.:format)                                     equipment#index
+                           POST   /equipment(.:format)                                     equipment#create
+                           GET    /equipment/new(.:format)                                 equipment#new
+                           GET    /equipment/:id/edit(.:format)                            equipment#edit
+                           GET    /equipment/:id(.:format)                                 equipment#show
+                           PATCH  /equipment/:id(.:format)                                 equipment#update
+                           PUT    /equipment/:id(.:format)                                 equipment#update
+                           DELETE /equipment/:id(.:format)                                 equipment#destroy

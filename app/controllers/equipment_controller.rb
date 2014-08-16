@@ -10,6 +10,7 @@ class EquipmentController < ApplicationController
   # GET /equipment/1
   # GET /equipment/1.json
   def show
+    @events = @equipment.json_appointments
   end
 
   # GET /equipment/new
