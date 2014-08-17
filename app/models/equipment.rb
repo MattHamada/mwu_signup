@@ -1,6 +1,11 @@
 class Equipment < ActiveRecord::Base
   has_many :appointments
 
+  validates :name, presence: true
+  validates :room_number, presence: true
+  validates :location, presence: true
+
+
   def json_appointments
     appointments = self.appointments.after_last_week
     app_arr = []

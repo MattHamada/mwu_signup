@@ -1,28 +1,50 @@
-<div class-="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@equipment, html: { class: 'form-group', role: 'form' }) do |f| %>
-      <% if @equipment.errors.any? %>
-        <div id="error_explanation" class="alert alert-error">
-          <h2><%= pluralize(@equipment.errors.count, "error") %> prohibited this equipment from being saved:</h2>
+<div class-="row" style="padding-top: 5em;">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h4>New Equipment</h4></div>
+      <div class="panel-body">
+        <%= form_for(@equipment, html: { class: 'form-group', role: 'form' }) do |f| %>
+          <% if @equipment.errors.any? %>
+            <div id="error_explanation" class="alert alert-error">
+              <h2><%= pluralize(@equipment.errors.count, "error") %> prohibited this equipment from being saved:</h2>
 
-          <ul>
-            <% @equipment.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-      <div class="form-group">
-        <div class='col-xs-6 col-xs-offset-3'>
-          <%= f.label(:name, "Name", for: 'equipment_name') %>
-          <%= f.text_field(:name, class: "form-control", placeholder: "Name" ) %>
-        </div>
-      </div>
+              <ul>
+                <% @equipment.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="form-group">
+            <div class='col-xs-6 col-xs-offset-3'>
+              <%= f.label(:name, "Eqipment Make and Model", for: 'equipment_name') %>
+              <%= f.text_field(:name, class: "form-control", placeholder: "Name" ) %>
+            </div>
+          </div>
 
-      <div class="actions">
-        <%= f.submit %>
+          <div class="form-group">
+            <div class='col-xs-6 col-xs-offset-3'>
+              <%= f.label(:location, "Building", for: 'equipment_location') %>
+              <%= f.text_field(:location, class: "form-control", placeholder: "Building" ) %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class='col-xs-6 col-xs-offset-3'>
+              <%= f.label(:room_number, "Room Number", for: 'equipment_room_number') %>
+              <%= f.text_field(:room_number, class: "form-control", placeholder: "123" ) %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class='col-xs-6 col-xs-offset-3' style="text-align: center; padding-top: 3em; padding-bottom: 1em;">
+              <%= f.submit class: 'btn btn-large btn-primary' %>
+            </div>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
+
 
