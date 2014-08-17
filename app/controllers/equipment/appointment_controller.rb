@@ -6,15 +6,16 @@ class Equipment::AppointmentController < ApplicationController
                                    date_time_start: DateTime.parse(params[:start]),
                                    date_time_end: DateTime.parse(params[:end]))
     if @appointment.save
-      render json: { success: true }
+      render json: { success: true,
+                     id: @appointment.id }
     else
       render json: { success: false}
     end
   end
 
-  def next_id
-    render json: { next_id: Appointment.next_id }
-  end
+  # def next_id
+  #   render json: { next_id: Appointment.next_id }
+  # end
 
   def destroy
     @appointment = Appointment.find(params[:id])

@@ -1777,9 +1777,6 @@ function EventManager(options) { // assumed to be a calendar
 
 		backupEventDates(out);
 
-
-        //TODO AJAX HERE TO ADD NEW EVENT TO RAILS DB
-
 		return out;
 	}
 
