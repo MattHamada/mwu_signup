@@ -2,7 +2,7 @@ class Equipment < ActiveRecord::Base
   has_many :appointments
 
   def json_appointments
-    appointments = self.appointments
+    appointments = self.appointments.after_last_week
     app_arr = []
     appointments.each do |a|
       temp = {id:    a.id,

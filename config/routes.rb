@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  match '/', to: 'equipment#index', via: :get
+
   resources :equipment
 
   get 'equipment/:equipment_id/appointment/next_id' => 'equipment/appointment#next_id', as: :appointment_next_id
