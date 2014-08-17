@@ -1753,7 +1753,7 @@ function EventManager(options) { // assumed to be a calendar
 			out.source = source;
 		}
 
-		out._id = data._id || (data.id === undefined ? '_fc' + eventGUID++ : data.id + '');
+		//out._id = data._id || (data.id === undefined ? '_fc' + eventGUID++ : data.id + '');
 
 		if (data.className) {
 			if (typeof data.className == 'string') {
@@ -1770,6 +1770,8 @@ function EventManager(options) { // assumed to be a calendar
 		out.allDay = allDay;
 		out.start = start;
 		out.end = end;
+        out._id = data.id;
+        out.id = data.id;
 
 		if (options.forceEventDuration && !out.end) {
 			out.end = getEventEnd(out);
