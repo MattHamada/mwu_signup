@@ -1,6 +1,14 @@
-<h1>Editing equipment</h1>
+<div class-="row" style="padding-top: 5em;">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h4 style="text-align: center;">Edit <%= @equipment.name %></h4></div>
+      <div class="panel-body">
+        <%= render 'form' %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @equipment %> |
+<%= link_to 'Calendar', @equipment %> |
 <%= link_to 'Back', equipment_index_path %>

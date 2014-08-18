@@ -1,19 +1,18 @@
-<div class-="row" style="padding-top: 5em;">
-  <div class="col-md-8 col-md-offset-2">
-    <div class="panel panel-default">
-      <div class="panel-heading"><h4>New Equipment</h4></div>
-      <div class="panel-body">
+
         <%= form_for(@equipment, html: { class: 'form-group', role: 'form' }) do |f| %>
           <% if @equipment.errors.any? %>
-            <div id="error_explanation" class="alert alert-error">
-              <h2><%= pluralize(@equipment.errors.count, "error") %> prohibited this equipment from being saved:</h2>
 
-              <ul>
-                <% @equipment.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-                <% end %>
-              </ul>
-            </div>
+                <div id="error_explanation">
+                  <div class="alert alert-danger" style="text-align: center;">
+                    <h4><%= pluralize(@equipment.errors.count, "error") %> prohibited this equipment from being saved:</h4>
+                    <ul>
+                      <% @equipment.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+
           <% end %>
           <div class="form-group">
             <div class='col-xs-6 col-xs-offset-3'>
@@ -42,9 +41,4 @@
             </div>
           </div>
         <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-
 

@@ -52,12 +52,13 @@
                 eventData['id'] = data.id;
               },
               error: function() {
-                alert('error');
+                alert('An error has occured.  Please try again');
               }
              });
             $('#calendar').fullCalendar('renderEvent', eventData, true);
           }
           $('#calendar').fullCalendar('unselect');
+          location.reload();
         },
         editable: true,
           events: [<% @events.each do |e| %>

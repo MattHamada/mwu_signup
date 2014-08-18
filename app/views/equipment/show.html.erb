@@ -1,6 +1,14 @@
 <%= render 'layouts/calendar' %>
 
-<%= link_to 'Edit', edit_equipment_path(@equipment) %> |
-<%= link_to 'Back', equipment_index_path %>
-
-<%= link_to 'new appointment', new_equipment_appointment_path(@equipment) %>
+<table>
+  <thead>
+  <tr>
+  </tr>
+  </thead>
+<tbody>
+<tr>
+  <td><%= link_to 'Edit', edit_equipment_path(@equipment) %> |
+    <%= link_to 'Back', equipment_index_path %></td>
+</tr>
+</tbody>
+</table>
