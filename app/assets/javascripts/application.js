@@ -14,6 +14,5 @@
 //= require jquery_ujs
 //= require moment.min
 //= require jquery-ui.min
-
 //= require fullcalendar
 //= require turbolinks
