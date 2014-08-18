@@ -50,17 +50,14 @@
                 },
               success: function(data) {
                 eventData['id'] = data.id;
-              },
-              error: function() {
-                alert('An error has occured.  Please try again');
+                location.reload();
               }
              });
             $('#calendar').fullCalendar('renderEvent', eventData, true);
           }
           $('#calendar').fullCalendar('unselect');
-          location.reload();
         },
-        editable: true,
+        editable: false,
           events: [<% @events.each do |e| %>
             {
               id:    '<%= e[:id] %>',
